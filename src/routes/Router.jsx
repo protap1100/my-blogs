@@ -1,15 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
-import AllPosts from "../pages/AllPosts";
+import MainLayouts from "../layouts/MainLayouts";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-    children : [
+    element: <MainLayouts />,
+    errorElement: <div> 404 Not Found</div>,
+    children: [
       {
-        path: '/posts',
-        element: <AllPosts></AllPosts>
-      }
-    ]
+        index: true,
+        element: <Home></Home>,
+      },
+    ],
   },
 ]);
